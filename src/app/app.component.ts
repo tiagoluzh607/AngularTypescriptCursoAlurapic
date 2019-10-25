@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  description = 'Leão';
+  url= 'https://www.spiria.com/sites/default/files/blog/angular-typescript.png';
+  title = 'alurapic';
 }
