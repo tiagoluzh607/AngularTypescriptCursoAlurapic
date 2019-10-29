@@ -10,4 +10,4 @@
     </form>
 </div>
 {{filter}}
-<ap-photos [photos]="photos"></ap-photos>
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos><!-- filterByDescription é um pipe personalizado que vamos implementar que alem de photos como entrada no tubo tambem recebera o filter que é o texto dinamicamente escrito no input-->
