@@ -18,7 +18,7 @@ export class PhotosComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    if(changes.photos){ //componente changes diz para nós se uma propriedade mudou
+    if(changes.photos){ //componente changes diz para nós se uma propriedade mudou caso exista quer dizer que mudou
       this.rows = this.groupColumns(this.photos);
     }
   }
