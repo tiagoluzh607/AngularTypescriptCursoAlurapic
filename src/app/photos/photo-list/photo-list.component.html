@@ -1,5 +1,6 @@
 <ap-search 
-    (onTyping)="filter = $event">
+    (onTyping)="filter = $event"
+    [value]="filter">
 </ap-search>
 <ap-photos [photos]="photos | filterByDescription: filter"></ap-photos><!-- filterByDescription é um pipe personalizado que vamos implementar que alem de photos como entrada no tubo tambem recebera o filter que é o texto dinamicamente escrito no input-->
 

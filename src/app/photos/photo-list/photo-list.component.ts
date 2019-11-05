@@ -35,6 +35,7 @@ export class PhotoListComponent implements OnInit {
       .subscribe(photos => {
         //this.photos.push(...photos);// o push nao funcionara pois o angular só detecta quando o valor da variavel e no caso do push o valor da variavel em si nao muda só é adicionado um novo objeto a lista
         //para adicionar mais fotos ... passar como parametro exemplo (1,2,3) quantos elements tiver ele vai passar
+        this.filter = '';
         this.photos = this.photos.concat(photos); //retornara uma lista nova com os dois juntos
         if(!photos.length) this.hasMore = false; //quando nao tiver mais seta hasMore para false
       });
