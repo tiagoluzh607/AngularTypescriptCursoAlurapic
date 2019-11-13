@@ -1,0 +1,23 @@
+[33m90f522368bc45bea2b0cb7737d4a62b7fa7e9319[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Criando Diretiva personalizada ao passar o mouse por cima deixar o elemento mais escuro
+[33mceea34f541c76b96275baf0fbea3d794c2214b93[m liberando o valor do input para ser setado pelo eleemento pai
+[33m01d8042eaf37a4a253ded9df381596482528677b[m Comunicacao de Elemento Filho para Elemento Pai - Componentizando filtro de pesquisa
+[33m3bd775bc1c4d6c005e9f68ef4dba6d0638a1a7f9[m Criando component Card
+[33m57b6ef1d4a15de5ba9c72e57f87015dfd5e4d4ac[m Importando font-awesome no projeto
+[33m064a6c8891ef6ab842e4a726b71695b4faa1bb6a[m Separando a aplicação em submodulos, para melhor organização e reaproveitamento individual dos componentes
+[33mc7f7edf6459fb57005caaca023d478b807acc6bf[m Implementando um botao para carregar fotos do servidor pouco a pouco
+[33mf094683c3bd48aa049da241c1b29f93195bffc09[m Evitando multiplas requisições com padrao debounce, utilizando RxJS
+[33md32971934376063168ee7c39940afb426b554db4[m usando resolve para passar dados antes do componente ser resolvido na tela, assim ele vem com tudo preenchido
+[33mb54f22811a6e13673b1b09d85fa9290e364992ef[m Criando Pipe personalizado para filtrar as fotos
+[33m5679c74f1f113f5c0e76a51699810cc9a3b21872[m Capturando eventos da tela keyup de um input
+[33me689ffa5c7c9471eea488363337e351edc775b57[m Criando um component de grid do bootstrap sepando row de cols
+[33m438d71e6bd289fdcf3b3291aff1c1b7e1d021a75[m Passando parâmetros na rota e pegando no component
+[33mfa509a12ab895a72bafba0854233ddc5d96f978a[m Lidando com rotas inexistentes
+[33mfe873ce1304dd6122a487fab3fc76051e77f0c1f[m separando componentes em rotas a serem acessadas pela url
+[33m6e96cdd276fac3fb2420b6465841da449d9ddb4a[m Separando o photos.module de app.module para ele ter suficiente para rodar
+[33mb8112894e03773dd3cdb267042d615078c0fa07f[m Colocando a dependencia de HttpClient em photos module
+[33mfe7ccf261b72353533543c26b9a318899fdf6c39[m Tipando os dados
+[33m38ff09bc8b4827e623fb04fa4766fca964cdf591[m Separando a busca de fotos na API em um servico
+[33m6e86ed2c3a9e7b7b4597a6b4113112959e5f8e2f[m buscando dados da API com HttpClient
+[33m41d68522779a06da742c09adc5b1375caa36b3e1[m Criando um component e separando em um modulo e utilizando o seletor
+[33mdc0025268cf7048a0e3ca57ab57f22d521cebc8f[m Adicionando bootstrap ao projeto
+[33m51864442ebdade04cd33fd40a41de5ee17ff410d[m initial commit
