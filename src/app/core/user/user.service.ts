@@ -9,7 +9,7 @@ import { User } from './user';
 })
 export class UserService{
 
-    private userSubject = new BehaviorSubject<User>(null); //emissor de mensagem, o behavior subject segura nele sempre o ultimo next, mas de cara ele jah deve emitir um valor que por padrao colocamos null 
+    private userSubject = new BehaviorSubject<User>(null); //emissor de mensagem, o behavior subject segura nele sempre o ultimo next até que alguem consuma, mas de cara ele jah deve emitir um valor que por padrao colocamos null 
 
     constructor(private tokenService: TokenService){
 
