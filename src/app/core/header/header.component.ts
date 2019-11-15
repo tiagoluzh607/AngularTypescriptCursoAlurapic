@@ -9,11 +9,9 @@ import { User } from '../user/user';
 })
 export class HeaderComponent{
 
-    user$: Observable<User>; //dolar é convencao para Observable
-    user: User
+    user$: Observable<User>; //dolar é convencao para Observable // colocado o pipe no async para o proprio template fazer o subscribe
 
     constructor(userService: UserService){
         this.user$ = userService.getUser();
-        this.user$.subscribe(user => {this.user = user});
     }
 }
