@@ -31,4 +31,9 @@ export class UserService{
     getUser(){
         return this.userSubject.asObservable();
     }
+
+    logout(){
+        this.tokenService.removeToken();
+        this.userSubject.next(null);
+    }
 }
