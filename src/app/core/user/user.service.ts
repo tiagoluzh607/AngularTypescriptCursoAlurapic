@@ -10,6 +10,7 @@ import { User } from './user';
 export class UserService{
 
     private userSubject = new BehaviorSubject<User>(null); //emissor de mensagem, o behavior subject segura nele sempre o ultimo next até que alguem consuma, mas de cara ele jah deve emitir um valor que por padrao colocamos null 
+    private userName: string = null;
 
     constructor(private tokenService: TokenService){
 
@@ -25,6 +26,7 @@ export class UserService{
     decodeAndNotify(){
        const token = this.tokenService.getToken();
        const user = jtw_decode(token) as User;
+       this.userName = user.name;
        this.userSubject.next(user); //emite o objeto usuario
     }
 
@@ -32,8 +34,16 @@ export class UserService{
         return this.userSubject.asObservable();
     }
 
+    getUserName(){
+        return this.userName;
+    }
+
     logout(){
         this.tokenService.removeToken();
         this.userSubject.next(null);
+    }
+    
+    isLogged(){
+        return this.tokenService.hasToken();
     }
 }
