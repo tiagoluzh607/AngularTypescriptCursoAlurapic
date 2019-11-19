@@ -7,6 +7,7 @@ import { VMessageModule } from '../shared/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { SignUpComponent } from './signup/signup.component';
 import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home.routing.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './home.component';
         FormsModule, //para colocar a tag form o angular usa esse como padrao a nao ser que usemos o ReactiveFormsModule
         ReactiveFormsModule,
         VMessageModule,
-        RouterModule
+        RouterModule,
+        HomeRoutingModule
     ]
 })
 export class HomeModule{
