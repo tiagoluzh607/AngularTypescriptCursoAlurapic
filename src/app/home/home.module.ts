@@ -6,10 +6,15 @@ import { CommonModule } from '@angular/common';
 import { VMessageModule } from '../shared/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { SignUpComponent } from './signup/signup.component';
+import { HomeComponent } from './home.component';
 
 
 @NgModule({
-    declarations: [SignInComponent, SignUpComponent],
+    declarations: [
+        SignInComponent, 
+        SignUpComponent,
+        HomeComponent
+    ],
     imports: [
         CommonModule,
         FormsModule, //para colocar a tag form o angular usa esse como padrao a nao ser que usemos o ReactiveFormsModule
