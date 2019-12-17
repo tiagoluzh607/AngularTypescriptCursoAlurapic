@@ -24,7 +24,11 @@ const routes: Routes = [
             photos: PhotoListResolver //temos um resolver que irá mandar os dados ao resolver o component
         }
     },
-    { path: 'p/add', component: PhotoFormComponent },
+    { 
+        path: 'p/add', 
+        component: PhotoFormComponent,
+        canActivate: [AuthGuard]
+    },
     { path: '**', component: NotFoundComponent}
 ];
 
