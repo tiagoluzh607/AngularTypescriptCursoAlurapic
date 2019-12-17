@@ -12,6 +12,7 @@ export class PhotoFormComponent implements OnInit {
 
   photoForm:FormGroup;
   file: File;
+  preview: string;
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -41,6 +42,17 @@ export class PhotoFormComponent implements OnInit {
         },
         ()=>{}
       )
+  }
+
+  /**
+   * Metodo que converte URI em base 64
+   * @param file
+   */
+  handleFile(file: File){
+    this.file = file;
+    const reader = new FileReader();
+    reader.onload = (event: any) => this.preview = event.target.result; // passa uma funcao calback ao terminar de carregar o metodo read as data URL
+    reader.readAsDataURL(file);
   }
 
 }
