@@ -3,12 +3,13 @@ import { Observable } from "rxjs";
 import { PhotoComment } from "../../photo/photo-comment";
 import { PhotoService } from "../../photo/photo.service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
     selector: 'ap-photo-comments',
     templateUrl: './photo-comments.component.html'
 })
-export class PhotoCommentsComponent implements OnInit{
+export class PhotoCommentsComponent implements OnInit {
 
     @Input() photoId: number;
     commentForm: FormGroup;
@@ -18,9 +19,9 @@ export class PhotoCommentsComponent implements OnInit{
     constructor(
         private photoService: PhotoService,
         private formBuilder: FormBuilder
-    ){}
+    ) { }
 
-    ngOnInit(){
+    ngOnInit() {
         this.comments$ = this.photoService.getComments(this.photoId);
 
         this.commentForm = this.formBuilder.group({
@@ -29,16 +30,17 @@ export class PhotoCommentsComponent implements OnInit{
 
     }
 
-    save(){
+    save() {
         const comment = this.commentForm.get('comment').value as string;
-        this.photoService
+        this.comments$ = this.photoService
             .addComment(this.photoId, comment)
-            .subscribe(
-                () => {
-                    this.commentForm.reset();
-                    alert('Comentario Adicionado com Sucesso!');
-                }
-            )
+            .pipe(switchMap(() => this.photoService.getComments(this.photoId))) // Switch map autera o fluxo do Observable para um outro Observable, como o fluxo foi alterado agora o ultimo Observale do Switch é retornado
+            .pipe(tap(() => { // tap executa um codigozin antes de retornar o observable, um tapinha antes do subscribe
+                this.commentForm.reset();
+            }))
+
+
+
 
     }
 }
