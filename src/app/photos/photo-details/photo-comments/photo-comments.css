@@ -1,0 +1,4 @@
+.comment-list{
+    height: 50vh; /* vh é 50% da Tela Visivel!! */
+    overflow-y: auto; /* Para gerar um scroll interno*/
+}
