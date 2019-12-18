@@ -25,8 +25,16 @@ export class PhotoListComponent implements OnInit {
   ){}
   
   ngOnInit(): void {
-    this.userName = this.activatedRoute.snapshot.params.userName; // pegando parametros da url
-    this.photos = this.activatedRoute.snapshot.data.photos; // conseguimos pegar os parâmetros passados na rota
+
+    this.activatedRoute.params.subscribe( // vamos executar o codigo sempre que tiver alteracoes na rota, mesmo que o onInit nao seja chamado novamente
+      (params)=>{
+        this.userName = params.userName;
+        this.photos = this.activatedRoute.snapshot.data.photos;
+      }
+    );
+
+    // this.userName = this.activatedRoute.snapshot.params.userName; // pegando parametros da url
+    // this.photos = this.activatedRoute.snapshot.data.photos; // conseguimos pegar os parâmetros passados na rota
     
   }
 
