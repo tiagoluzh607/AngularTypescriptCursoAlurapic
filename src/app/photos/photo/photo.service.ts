@@ -4,8 +4,9 @@ import { Photo } from './photo';
 import { PhotoComment } from './photo-comment';
 import { map, catchError } from 'rxjs/operators';
 import { of, throwError, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
-const API = 'http://localhost:3000';
+const API = environment.ApiUrl;
 
 @Injectable({
     providedIn: 'root' //cria um servico para aplicação interira
