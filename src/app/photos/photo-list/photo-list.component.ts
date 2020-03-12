@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Photo } from '../photo/photo';
 import { PhotoService } from '../photo/photo.service';
+import { LoadingService } from 'src/app/shared/loading/loading.service';
 
 @Component({
   selector: 'ap-photo-list',
@@ -22,6 +23,7 @@ export class PhotoListComponent implements OnInit {
   constructor(
     private photoService: PhotoService,
     private activatedRoute: ActivatedRoute
+
   ){}
   
   ngOnInit(): void {
