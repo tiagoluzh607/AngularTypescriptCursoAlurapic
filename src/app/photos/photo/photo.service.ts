@@ -24,7 +24,7 @@ export class PhotoService{
         const params = new HttpParams()
             .append('page', page.toString());
         return this.http
-            .get<Photo[]>(`${API}/${userName}/photosx`, {params});
+            .get<Photo[]>(`${API}/${userName}/photos`, {params});
     }
 
     //Vamos enviar a foto para o servidor não em JSOn e sim em formData
