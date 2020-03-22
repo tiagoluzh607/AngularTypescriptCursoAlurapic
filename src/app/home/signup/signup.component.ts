@@ -6,6 +6,7 @@ import { NewUser } from './new-user';
 import { SignUpService } from './signup.service';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from '../../core/platform-detector/platform-detector-service';
+import { userNamePassword } from './username-password.validator';
 
 @Component({
     templateUrl: './signup.component.html',
@@ -52,6 +53,8 @@ export class SignUpComponent implements OnInit {
                 Validators.minLength(8),
                 Validators.maxLength(18)
             ]],
+        }, {
+            validator: userNamePassword //faz validações crossfield ou seja entre campos do formulario
         });
 
         this.platformDetectorService.isPlatformBrowser() && // truque se for true executa 
